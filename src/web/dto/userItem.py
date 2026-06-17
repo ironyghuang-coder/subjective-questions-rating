@@ -1,13 +1,12 @@
 from pydantic import BaseModel
 
 class UserItem(BaseModel):
-    id: int
+    id: int | None = None
     user_name: str
-    user_id: int
     wid: str
     phone: str
     email: str
-    hashed_password: str
-    is_active: bool
-    is_locked: bool
-    
+    password: str
+    is_active: int | None = None
+    is_locked: int | None = None
+

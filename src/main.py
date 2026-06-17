@@ -1,23 +1,17 @@
 from fastapi import Depends, FastAPI, HTTPException
 from datetime import datetime
-
-from src.web.config.database import SessionLocal
+from src.web.config.database import get_db
 from src.web.service import userService
 from web.dto.docItem import DocItem
 from web.dto.docSample import DocSample
 from src.web.service.docService import DocService
 from src.web.service.vectorService import VectorService
 from sqlalchemy.orm import Session
+from src.web.dto.userItem import UserItem
 
 # 创建 FastAPI 应用实例
 app = FastAPI()
 
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 # 定义根路径的 GET 路由
 # 健康检查端点
@@ -53,3 +47,7 @@ async def read_user(user_id: int, db: Session = Depends(get_db)):
     if db_user is None:
         raise HTTPException(status_code=404, detail="用户不存在")
     return db_user
+
+@app.post("/users/")
+def create_user(user: UserItem, db: Session = Depends(get_db)):
+    return userService.create_user(db=db, user=user)

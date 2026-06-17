@@ -1,5 +1,5 @@
 from src.web.config.database import Base
-from sqlalchemy import Column, Integer, String, Boolean, DateTime
+from sqlalchemy import Column, Integer, String, DateTime
 
 class User(Base):
     __tablename__ = "users"  # 表名
@@ -10,7 +10,7 @@ class User(Base):
     phone = Column(String, unique=True, index=True)      # 手机号码 唯一，建索引
     email = Column(String, unique=True, index=True)      # 邮件 唯一，建索引
     hashed_password = Column(String)                     # 哈希密码
-    is_active = Column(Boolean, default=True)            # 是否活跃
-    is_locked = Column(Boolean, default=True)            # 是否锁定
+    is_active = Column(Integer, default=True)            # 是否活跃
+    is_locked = Column(Integer, default=True)            # 是否锁定
     created_at = Column(DateTime)
     updated_at = Column(DateTime)
