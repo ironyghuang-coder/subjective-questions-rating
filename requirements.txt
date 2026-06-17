@@ -1,0 +1,31 @@
+
+# 基础库
+python-dotenv>=1.0.0      # 环境变量管理
+pydantic>=2.0.0           # 数据验证和设置管理
+loguru>=0.7.0             # 日志记录
+
+# AI/ML 相关
+openai>=1.0.0             # OpenAI API
+anthropic>=0.7.0          # Claude API
+google-generativeai>=0.3.0 # Gemini API
+sentence-transformers>=2.2.0 # Embedding 模型
+chromadb>=0.4.0           # 向量数据库
+
+# Agent 框架
+langchain>=0.1.0          # LangChain 框架
+langchain-community>=0.0.10 # LangChain 社区工具
+langchain-openai>=0.0.5   # LangChain OpenAI 集成
+llama-index>=0.10.0       # LlamaIndex（可选）
+semantic-kernel>=0.9.0    # Semantic Kernel（可选）
+
+# 工具和工具
+requests>=2.31.0          # HTTP 请求
+beautifulsoup4>=4.12.0    # HTML 解析
+pandas>=2.0.0             # 数据处理
+numpy>=1.24.0             # 数值计算
+
+# 开发工具
+pytest>=7.4.0             # 测试框架
+black>=23.0.0             # 代码格式化
+flake8>=6.0.0             # 代码检查
+jupyter>=1.0.0            # Jupyter 笔记本
