@@ -31,3 +31,7 @@ flake8>=6.0.0             # 代码检查
 jupyter>=1.0.0            # Jupyter 笔记本
 
 pymysql>=1.2.0
+python-jose>=3.5.0
+cryptography>=46.0.2
+passlib>=1.7.4
+bcrypt>=4.0.1
